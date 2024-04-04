@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <title>facebook</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        width: 600px;
+      }
+      main {
+        display: flex;
+        justify-content: center;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        width: 100px;
+        margin-bottom: 10px;
+        width: 400px;
+        height: 40px;
+      }
+      input::placeholder {
+        padding-left: 10px;
+        font-size: 20px;
+      }
+      input[type="email"] {
+        font-size: 20px;
+        padding-left: 10px;
+      }
+      input[type="password"] {
+        font-size: 20px;
+        padding-left: 10px;
+      }
+      input:focus {
+        outline: none;
+        /* border: none; */
+      }
+      header {
+        background-color: #32476b;
+        display: flex;
+        color: white;
+        padding: 15px;
+      }
+      .contents h3 {
+        margin: 1rem 0;
+        font-weight: 300;
+        margin: 30px;
+      }
+      .log {
+        width: 400px;
+        padding: 10px 0;
+        background-color: #32476b;
+        color: white;
+      }
+      .sign {
+        background-color: yellowgreen;
+        margin: 0px 10px;
+        padding: 5px 15px;
+        color: aliceblue;
+        border: none;
+      }
+      .contents h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contents .btn2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+      }
+      .btn_create {
+        width: 200px;
+        padding: 12px;
+        background-color: yellowgreen;
+        border: none;
+        color: white;
+      }
+      .contents .link {
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+      }
+      .style {
+        border: none;
+        border-bottom: 3px solid red;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>facebook</h1>
+        <button class="sign">sign up</button>
+      </header>
+      <main>
+        <div class="contents">
+          <h3>Log into facebook</h3>
+          <div class="box">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              id="email"
+              class="inputem" />
+            <input
+              type="password"
+              placeholder="Password"
+              id="pass"
+              class="inputpass" />
+            <p class="message"></p>
+          </div>
+          <div class="btn1">
+            <button class="log">Sign up</button>
+          </div>
+          <p>or</p>
+          <div class="btn2">
+            <button class="btn_create">create new account</button>
+          </div>
+          <div class="link">
+            <a href="#">forgot account?</a>
+            <!-- <a href="#">Not now</a> -->
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      let email = document.getElementById("email");
+      let pass = document.getElementById("pass");
+      let btnLog = document.querySelector(".log");
+      let inputEmail = document.querySelector(".inputem");
+      let inputPass = document.querySelector(".inputpass");
+      let message = document.querySelector(".message");
+
+      btnLog.addEventListener("click", function () {
+        email = document.getElementById("email").value;
+        pass = document.getElementById("pass").value;
+        if (!email) {
+          inputEmail.classList.add("style");
+          message.innerHTML = "input a valid email";
+          message.style.color = "red";
+
+          setTimeout(() => {
+          inputEmail.classList.remove("style");
+          message.style.display = 'none'
+            
+          }, 3000);
+          
+
+          console.log("no");
+        }else if(!pass){
+          inputPass.classList.add("style");
+          message.innerHTML = "input a password";
+          message.style.color = "red";
+
+
+                    setTimeout(() => {
+          inputEmail.classList.remove("style");
+          message.style.display = 'none'
+            
+          }, 3000);
+
+        }else if(pass.length < 4){
+          message.innerHTML = 'password too weak';
+          message.style.color = "red";
+
+
+          console.log('no');
+        }
+      });
+      const num1 = 6
+      const num2 = 2
+      const newNum = num1.toString()
+      console.log(typeof newNum, newNum);
+
+      let x = 9.656;
+      let y=x.toFixed(1);
+      console.log(y);
+
+      const z  = new Date()
+      console.log(Number(z));
+
+    </script>
+  </body>
+</html>
+
+<!-- // inputPass.classList.add('style') -->
+
+<!-- if(pass.length = 4){
+inputPass.style.border = 'none'
+
+inputPass.style.borderBottom = '2px solid red'
+  }
+   console.log('yes');
+ }) -->
